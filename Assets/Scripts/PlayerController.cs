@@ -1,11 +1,13 @@
-using System.Numerics;
-using UnityEngine;
-using UnityEngine.InputSystem;
+
+using UnityEngine; // this gives us access to monobehaviour, gameobject, transform, ridigbody, vector3, etc.
+using UnityEngine.InputSystem; 
 
 public class PlayerController : MonoBehaviour
 {
 
-    private RigidBody rb;
+    public float speed = 10.0f;
+
+    private Rigidbody rb;
 
     private float movementX;
     private float movementY;
@@ -17,14 +19,17 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementVal)
     {
-        Vector2 movementVec = movementVal.Get<Vector2>();
+        UnityEngine.Vector2 movementVec = movementVal.Get<UnityEngine.Vector2>();
 
-        movementX = movementVec.X;
-        movementY = movementVec.Y;
+        movementX = movementVec.x;
+        movementY = movementVec.y;
     }
 
     void FixedUpdate() //FIXED UPDATE FOR PHYSICS
     {
         
+        UnityEngine.Vector3 movement = new UnityEngine.Vector3(movementX * speed, 0.0f, movementY * speed);
+        rb.AddForce(movement);
+
     }
 }
