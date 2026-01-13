@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public TMP_Text scoreDisplay;
     public float speed = 10.0f;
+    public Transform cam;
 
     private Rigidbody rb;
     private int PickupCnt = 0;
@@ -30,8 +31,22 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate() //FIXED UPDATE FOR PHYSICS
     {
-        
-        UnityEngine.Vector3 movement = new UnityEngine.Vector3(movementX * speed, 0.0f, movementY * speed);
+        float horInput = movementX * speed;
+        float verInput = movementY * speed;
+
+
+        Vector3 camForward = cam.forward;
+        Vector3 camRight = cam.right;
+
+        camForward.y = 0;
+        camRight.y = 0;
+
+        Vector3 forwardRelative = verInput * camForward;
+        Vector3 rightRelative = horInput * camRight;
+
+        Vector3 moveDir = forwardRelative + rightRelative;
+
+        UnityEngine.Vector3 movement = new UnityEngine.Vector3(moveDir.x, 0.0f, moveDir.z);
         rb.AddForce(movement);
 
     }
