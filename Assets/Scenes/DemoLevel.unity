@@ -492,7 +492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 373147410}
   sensitivity: 35
-  smoothSpeed: 0.125
+  smoothSpeed: 0.115
   offset: {x: 8, y: 2, z: 0}
 --- !u!1 &373147410
 GameObject:
