@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
     public GameObject player; //  reference to player object
     public float sensitivity = 30.0f;
     public float smoothSpeed = 0.125f;
-    private Vector3 offset; //  camera offset for player
+    public Vector3 offset; //  camera offset for player
     private InputAction lookAction;
     private float yaw;
 
@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
         lookAction = InputSystem.actions.FindAction("Look");
     }
     
-    void LateUpdate() // late update is called after update() so that our camera movement and player movement dont have to compete with each other.
+    void FixedUpdate() // late update is called after update() so that our camera movement and player movement dont have to compete with each other.
     {
         
         Vector2 look = lookAction.ReadValue<Vector2>();
