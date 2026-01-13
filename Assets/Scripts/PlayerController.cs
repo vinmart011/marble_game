@@ -23,14 +23,18 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementVal)
     {
-        UnityEngine.Vector2 movementVec = movementVal.Get<UnityEngine.Vector2>();
 
+        // TODO: make the ball accelerate to a top speed but lose speed when letting go 
+        // of forward input or colliding with a barrier.
+
+        UnityEngine.Vector2 movementVec = movementVal.Get<UnityEngine.Vector2>();
         movementX = movementVec.x;
         movementY = movementVec.y;
     }
 
     void FixedUpdate() //FIXED UPDATE FOR PHYSICS
     {
+
         float horInput = movementX * speed;
         float verInput = movementY * speed;
 
