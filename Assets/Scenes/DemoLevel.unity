@@ -645,7 +645,7 @@ Rigidbody:
   m_GameObject: {fileID: 373147410}
   serializedVersion: 5
   m_Mass: 1
-  m_LinearDamping: 0.8
+  m_LinearDamping: 1
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -690,7 +690,8 @@ MonoBehaviour:
   scoreDisplay: {fileID: 1379292245}
   speed: 18
   cam: {fileID: 330585546}
-  jumpForce: 5
+  jumpForce: 7.5
+  fallMult: 2.5
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +918,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813344044}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1ac2f51c11a6be54f80b22699a7f1c94, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
