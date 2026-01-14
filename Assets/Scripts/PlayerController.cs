@@ -9,16 +9,29 @@ public class PlayerController : MonoBehaviour
     public TMP_Text scoreDisplay;
     public float speed = 10.0f;
     public Transform cam;
+    public float jumpForce = 5.0f;
 
     private Rigidbody rb;
     private int PickupCnt = 0;
 
     private float movementX;
     private float movementY;
+    private bool isGrounded;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+
+    void OnJump(InputValue jumpVal) {
+
+        if (!isGrounded) return;
+
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        isGrounded = false;
+
     }
 
     void OnMove(InputValue movementVal)
@@ -62,6 +75,22 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             PickupCnt++;
             SetScoreText();
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
         }
     }
 

@@ -688,8 +688,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 1379292245}
-  speed: 10
+  speed: 18
   cam: {fileID: 330585546}
+  jumpForce: 5
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,7 +905,7 @@ GameObject:
   - component: {fileID: 813344045}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
