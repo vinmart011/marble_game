@@ -4,9 +4,11 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     
+    public LevelLoader levelLoader;
+
     public void StartGame()
     {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        levelLoader.LoadNextLevel();
     }
 
     public void Options()
