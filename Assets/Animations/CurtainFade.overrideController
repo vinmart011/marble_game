@@ -7,5 +7,9 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CurtainFade
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: ac89b08bf9a80ce4a858b55f1658f0f1, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: fb2c0555e34039946982f9f9aed86927, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1416a7d9f60389048a523b1fa87dca89, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: becdce71333883743bcb2ab748b6d657, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 01857c4f7cab4c24982fb6ccc4b7eddd, type: 2}
